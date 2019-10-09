@@ -13,12 +13,7 @@
                         logo
                     </el-col>
                     <el-col :span="8">
-                        <el-menu mode="horizontal" default-active="index">
-                            <el-menu-item index="index">首页</el-menu-item>
-                            <el-menu-item index="product">产品介绍</el-menu-item>
-                            <el-menu-item index="scheme">解决方案</el-menu-item>
-                            <el-menu-item index="downcenter">下载中心</el-menu-item>
-                        </el-menu>
+                        2
                     </el-col>
                     <el-col :span="6">
                         <el-button
