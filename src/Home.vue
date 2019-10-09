@@ -12,15 +12,13 @@
                     <el-col :span="10">
                         logo
                     </el-col>
-                    <el-col :span="8">
-                        2
-                    </el-col>
                     <el-col :span="6">
-                        <el-button
-                           type="normal" 
-                           size="small" 
-                           icon="el-icon-phone"
-                           class="phoneBtn">0755-82779639</el-button>
+                      <div class="aa">
+												1
+											</div>
+                    </el-col>
+                    <el-col :span="8">
+											<p>0755-82779639</p>
                     </el-col>
                 </el-row>
             </el-header>
@@ -72,5 +70,9 @@ export default {
             background: @color;
             color: #eee;
         }
-    }
+		}
+		.aa {
+			width: 100px;
+			height: 100px;
+		}
 </style>
