@@ -1,18 +1,27 @@
 <!--
  * @Date: 2019-10-09 11:54:22
  * @LastEditors: Yqoo
- * @LastEditTime: 2019-10-09 14:23:00
+ * @LastEditTime: 2019-10-09 16:12:38
  * @Desc: 
  -->
 <template>
-    <div>
-        index
-        <el-button-group>
-            <el-button type='primary' size='mini'>首页更新</el-button>
-            <el-button type='success' size='mini'>产品介绍</el-button>
-            <el-button type='danger' size='mini'>解决方案</el-button>
-        </el-button-group>
-    </div>
+    <el-container>
+        <el-header>
+            <el-row>
+                <el-col :span="10">
+                    logo
+                </el-col>
+                <el-col :span="8">
+                    <el-menu>
+                        
+                    </el-menu>
+                </el-col>
+                <el-col :span="6">3</el-col>
+            </el-row>
+        </el-header>
+        <el-main>main</el-main>
+        <el-footer>footer</el-footer>
+    </el-container>
 </template>
 
 <script>
@@ -21,6 +30,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="less" scoped>
+    .header {
+        
+    }
 </style>

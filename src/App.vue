@@ -1,21 +1,21 @@
 <!--
  * @Date: 2019-10-09 11:45:17
  * @LastEditors: Yqoo
- * @LastEditTime: 2019-10-09 11:57:38
+ * @LastEditTime: 2019-10-09 16:37:11
  * @Desc: 
  -->
 <template>
   <div id="app">
-    <Index></Index>
+    <Home></Home>
   </div>
 </template>
 
 <script>
-import Index from './components/index/index.vue'
+import Home from './Home.vue'
 export default {
   name: 'app',
   components: {
-    Index
+    Home
   }
 }
 </script>
@@ -25,8 +25,5 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
