@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-10-09 11:54:22
  * @LastEditors: Yqoo
- * @LastEditTime: 2019-10-10 14:42:21
+ * @LastEditTime: 2019-10-10 15:18:04
  * @Desc: 
  -->
 <template>
@@ -61,7 +61,7 @@ export default {
 			& .boxChild {
 				width: 20%;
 				text-align: center;
-				font-size: 14px;
+				font-size: 12px;
 				& div {
 					border-radius: 50%;
 					& img {
