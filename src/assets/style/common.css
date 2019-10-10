@@ -163,9 +163,12 @@ ol {
   height: 100%;
 }
 .el-menu--horizontal>.el-menu-item {
-    height: 60px;
-    line-height: 60px;
+  height: 60px;
+  line-height: 60px;
 }
 .el-menu.el-menu--horizontal {
-    border-bottom: none;
+  border-bottom: none;
+}
+.el-submenu .el-menu{
+  z-index: 10000001;
 }
