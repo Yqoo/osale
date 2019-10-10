@@ -73,13 +73,6 @@ var,
 i {
   font-style: normal;
 }
-body {
-  font-size: 16px;
-  line-height: 1.5;
-  font-family: "Microsoft Yahei", "simsun", "arial", "tahoma";
-  color: #333;
-  overflow: hidden;
-}
 table {
   border-collapse: collapse;
   border-spacing: 0;
