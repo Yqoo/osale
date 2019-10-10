@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-10-09 16:12:51
  * @LastEditors: Yqoo
- * @LastEditTime: 2019-10-10 14:49:12
+ * @LastEditTime: 2019-10-10 14:52:43
  * @Desc: 
  -->
 <template>
@@ -62,7 +62,7 @@ export default {
 				scheme: { name: '解决方案'},
 				down: { name: '下载中心'},
 			},
-			current: ''
+			current: 'index'
 		}
 	},
 	methods: {
