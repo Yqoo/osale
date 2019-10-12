@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-10-09 16:12:51
  * @LastEditors: Yqoo
- * @LastEditTime: 2019-10-10 14:52:43
+ * @LastEditTime: 2019-10-12 10:16:10
  * @Desc: 
  -->
 <template>
@@ -17,7 +17,22 @@
 							text-color="#eee" 
 							active-text-color="#00b8a9"
 							@select="selectNav">
-							<el-menu-item v-for="(item,key) in menus " :key="key" :index="key">{{item.name}}</el-menu-item>
+							<div v-for="(menu,index) in menus" :key="index" style="float:left">
+								<el-menu-item v-if="!menu.children" :index="menu.index">
+									<i :class="menu.icon"></i>
+									<span slot="title">{{menu.name}}</span>
+								</el-menu-item>
+								<el-submenu v-else index="aa">
+									<template slot="title">
+										<i :class="menu.icon"></i>
+										<span>{{menu.name}}</span>
+									</template>
+									<el-menu-item v-for="(sub,index) in menu.children" :key="index" :index="sub.index">
+										<i :class="sub.icon"  style="color:#fff;font-size:14px;"></i>
+										<span>{{sub.name}}</span>
+									</el-menu-item>
+								</el-submenu>
+							</div>
 						</el-menu>
           </el-col>
 					<el-col :span="8" v-else>
@@ -31,7 +46,22 @@
 									<i class="el-icon-menu" style="color:#eee"></i>
 									<span>菜单</span>
 								</template>
-								<el-menu-item v-for="(item,key) in menus " :key="key" :index="key">{{item.name}}</el-menu-item>
+								<div v-for="(menu,index) in menus" :key="index" style="float:left;width:150px">
+								<el-menu-item v-if="!menu.children" :index="menu.index">
+									<i :class="menu.icon"></i>
+									<span slot="title">{{menu.name}}</span>
+								</el-menu-item>
+								<el-submenu v-else index="aa">
+									<template slot="title">
+										<i :class="menu.icon"></i>
+										<span>{{menu.name}}</span>
+									</template>
+									<el-menu-item v-for="(sub,index) in menu.children" :key="index" :index="sub.index">
+										<i :class="sub.icon"></i>
+										<span>{{sub.name}}</span>
+									</el-menu-item>
+								</el-submenu>
+							</div>
 							</el-submenu>
 						</el-menu>
 					</el-col>
@@ -56,12 +86,17 @@ export default {
 		return {
 			screenWidth: '',
 			pc: true,
-			menus: {
-				index: { name: '首页'},
-				product: { name: '产品介绍'},
-				scheme: { name: '解决方案'},
-				down: { name: '下载中心'},
-			},
+			menus: [
+				{ index: 'index', name: '首页', icon:'el-icon-s-home' },
+				{ index: 'product', name: '产品介绍', icon:'el-icon-s-promotion', children:[
+					{ index: 'sell', name: '服装零售版', icon:'el-icon-shopping-cart-full' },
+					{ index: 'cloud', name: '云服务', icon:'el-icon-partly-cloudy' },
+					{ index: 'app', name: '手机APP', icon:'el-icon-mobile-phone' },
+					{ index: 'wx', name: 'o2o微信会员', icon:'el-icon-user' },
+				]},
+				{ index: 'scheme', name: '解决方案', icon:'el-icon-document' },
+				{ index: 'down', name: '下载中心', icon:'el-icon-sold-out' },
+			],
 			current: 'index'
 		}
 	},
@@ -98,12 +133,24 @@ export default {
 			line-height: 60px;
 			& .el-menu{
 				border-right: none;
+				& .el-menu-item {
+					& i {
+						color: #eee;
+						font-size: 14px;
+					}
+				}
+				& .el-submenu {
+					& i {
+						color: #eee;
+						font-size: 14px;
+					}
+				}
 			}
     }
   }
   & .phoneBtn {
     background: @color;
     color: #eee;
-  }
+	}
 }
 </style>
