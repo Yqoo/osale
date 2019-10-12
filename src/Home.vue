@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-10-09 16:12:51
  * @LastEditors: Yqoo
- * @LastEditTime: 2019-10-12 10:16:10
+ * @LastEditTime: 2019-10-12 16:32:07
  * @Desc: 
  -->
 <template>
@@ -69,18 +69,21 @@
             <el-button class="phoneBtn" type="normal" size="small" icon="el-icon-phone">0755-82779639</el-button>
           </el-col>
         </el-row>
-      </el-header>
-			<component :is="current"></component>
+     	</el-header>
+		<component :is="current"></component>
+		<Footer></Footer>
     </el-container>
   </div>
 </template>
 
 <script>
 import Index from './components/index/index.vue';
+import Footer from './components/footer.vue';
 export default {
 	name: "Home",
 	components: {
-		Index
+		Index,
+		Footer
 	},
 	data(){
 		return {
