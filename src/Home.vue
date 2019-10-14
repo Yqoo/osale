@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-10-09 16:12:51
  * @LastEditors: Yqoo
- * @LastEditTime: 2019-10-14 11:19:15
+ * @LastEditTime: 2019-10-14 15:43:42
  * @Desc: 
  -->
 <template>
@@ -90,7 +90,7 @@ export default {
 			menus: [
 				{ index: 'index', name: '首页', icon:'el-icon-s-home' },
 				{ index: 'product', name: '产品介绍', icon:'el-icon-s-promotion', children:[
-					{ index: 'sell', name: '服装零售版', icon:'el-icon-shopping-cart-full' },
+					{ index: 'resale', name: '服装零售版', icon:'el-icon-shopping-cart-full' },
 					{ index: 'cloud', name: '云服务', icon:'el-icon-partly-cloudy' },
 					{ index: 'app', name: '手机APP', icon:'el-icon-mobile-phone' },
 					{ index: 'wx', name: 'o2o微信会员', icon:'el-icon-user' },
