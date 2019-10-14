@@ -1,14 +1,14 @@
 /*
  * @Date: 2019-10-14 09:11:04
  * @LastEditors: Yqoo
- * @LastEditTime: 2019-10-14 10:01:54
+ * @LastEditTime: 2019-10-14 10:09:07
  * @Desc:引入全局组件
  */
 const requireComponent = require.context('@/components', true, /\.vue/);
-const capitalizeFirstLetter = str => {
+const capitalizeFirstLetter = str => {//首字母大写
     return str.charAt(0).toUpperCase() + str.slice(1)
 };
-const validateFileName = str => {
+const validateFileName = str => {//匹配文件
     return /^\S+\.vue$/.test(str) &&
         str.replace(/^\S+\/(\w+)\.vue$/, (rs, $1) => capitalizeFirstLetter($1))
 };
