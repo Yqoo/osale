@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-10-09 16:12:51
  * @LastEditors: Yqoo
- * @LastEditTime: 2019-10-12 16:32:07
+ * @LastEditTime: 2019-10-14 09:56:06
  * @Desc: 
  -->
 <template>
@@ -77,13 +77,11 @@
 </template>
 
 <script>
-import Index from './components/index/index.vue';
-import Footer from './components/footer.vue';
+import moudles from './assets/js/globalRouter';
 export default {
 	name: "Home",
 	components: {
-		Index,
-		Footer
+		...moudles,
 	},
 	data(){
 		return {
@@ -100,7 +98,7 @@ export default {
 				{ index: 'scheme', name: '解决方案', icon:'el-icon-document' },
 				{ index: 'down', name: '下载中心', icon:'el-icon-sold-out' },
 			],
-			current: 'index'
+			current: 'Index'
 		}
 	},
 	methods: {
