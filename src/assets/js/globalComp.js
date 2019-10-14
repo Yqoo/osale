@@ -1,7 +1,7 @@
 /*
  * @Date: 2019-10-14 09:11:04
  * @LastEditors: Yqoo
- * @LastEditTime: 2019-10-14 10:09:07
+ * @LastEditTime: 2019-10-14 11:18:56
  * @Desc:引入全局组件
  */
 const requireComponent = require.context('@/components', true, /\.vue/);
@@ -12,10 +12,10 @@ const validateFileName = str => {//匹配文件
     return /^\S+\.vue$/.test(str) &&
         str.replace(/^\S+\/(\w+)\.vue$/, (rs, $1) => capitalizeFirstLetter($1))
 };
-let modules = {};
+let globalComp = {};
 requireComponent.keys().forEach(key => {
     const componentConfig = requireComponent(key);
     const fileName = validateFileName(key);
-    modules[fileName] = componentConfig.default || componentConfig;
+    globalComp[fileName] = componentConfig.default || componentConfig;
 });
-export default modules;
+export default globalComp;

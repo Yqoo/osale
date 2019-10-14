@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-10-09 16:12:51
  * @LastEditors: Yqoo
- * @LastEditTime: 2019-10-14 09:56:06
+ * @LastEditTime: 2019-10-14 11:19:15
  * @Desc: 
  -->
 <template>
@@ -77,11 +77,11 @@
 </template>
 
 <script>
-import moudles from './assets/js/globalRouter';
+import globalComp from './assets/js/globalComp';
 export default {
 	name: "Home",
 	components: {
-		...moudles,
+		...globalComp,
 	},
 	data(){
 		return {
