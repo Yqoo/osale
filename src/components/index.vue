@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-10-09 11:54:22
  * @LastEditors: Yqoo
- * @LastEditTime: 2019-10-12 16:29:05
+ * @LastEditTime: 2019-10-15 15:46:39
  * @Desc: 
  -->
 <template>
@@ -9,12 +9,13 @@
     <el-main>
       <div class="main animated slideInDown">
         <div class="title">灵析软件 专注服装行业 深耕每一个细节</div>
+				<div class="line"></div>
 		<div class="box  animated pluse">
 			<div class="boxChild hvr-grow-shadow" v-for="(box,index) in boxs" :key="index">
 				<div>
 					<img :src="box.img">
+					<p>{{box.name}}</p>
 				</div>
-				<p>{{box.name}}</p>
 			</div>
 		</div>
 		<div class="boxDesc">
@@ -37,6 +38,7 @@
 	  <div class="desc">
 		  <div class="desc_title">
 			  <p>技术和产品优势</p>
+				<div class="line"></div>
 			  <p>专注于为服装行业提供信息化解决方案的软件服务商，拥有自主知识权。在互联网时代，与客户共同进步，助力客户实现企业信息化管理</p>
 		  </div>
 		  <div class="desc_box fadeInRightBig animated">
@@ -56,10 +58,13 @@
 			  </div>
 		  </div>
 		  <div class="sevreBox fadeInUpBig animated">
-			  <div v-for="index in 8" :key="index" class="outSide hvr-sink">
-				  <i class="el-icon-menu"></i>
-				  <p class="pFirst">免费更新</p>
-				  <p class="pSecond">同版本软件<br>可随时更新体验最新功能</p>
+			  <div v-for="(ser,index) in serves" :key="index" class="outSide hvr-sink">
+					<div>
+						<img :src="ser.img" alt="">
+						<p class="pFirst">{{ser.name}}</p>
+				  	<p class="pSecond">{{ser.desc1}}</p>
+				  	<p class="pSecond">{{ser.desc2}}</p>
+					</div>
 			  </div>
 		  </div>
 	  </div>
@@ -73,10 +78,20 @@ export default {
 	data(){
 		return {
 			boxs: [
-				{ img: 'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg', name: '服装零售版'},
-				{ img: 'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg', name: '服装连锁网络版'},
-				{ img: 'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg', name: '服装加盟分销版'},
-				{ img: 'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg', name: 'o2o微信会员'},
+				{ img: require('@/assets/image/index/fuzhunaglingshou.png'), name: '服装零售版'},
+				{ img: require('@/assets/image/index/wangluolians.png'), name: '服装连锁网络版'},
+				{ img: require('@/assets/image/index/fuwujiameng.png'), name: '服装加盟分销版'},
+				{ img: require('@/assets/image/index/O2Oweixin.png'), name: 'o2o微信会员'},
+			],
+			serves: [
+				{ img: require('@/assets/image/index/mianfeigengxin.png'), name: '免费更新', desc1: '同版本软件', desc2: '可随时更新体验最新功能' },
+				{ img: require('@/assets/image/index/lingfuwufei.png'), name: '零服务费',desc1: '销售只是开始', desc2: '服务永无止境' },
+				{ img: require('@/assets/image/index/zhongshengzhi.png'), name: '终生制', desc1: '软件是一次付费购买', desc2: '终身使用，免费升级' },
+				{ img: require('@/assets/image/index/shiyong.png'), name: '免费试用' , desc1: '免费试用30天', desc2: '购买后数据不会丢失' },
+				{ img: require('@/assets/image/index/yuntiyan.png'), name: '15天免费云体验', desc1: '所有网络版客户', desc2: '可免费体验15天云服务' },
+				{ img: require('@/assets/image/index/kedingzhi.png'), name: '可定制', desc1: '可以定制', desc2: '您需要的所有功能' },
+				{ img: require('@/assets/image/index/jiekoukaifang.png'), name: '接口开放', desc1: '提供软件内部所有接口', desc2: '任何软件可以调用' },
+				{ img: require('@/assets/image/index/shujulingdiushi.png'), name: '数据零丢失', desc1: '数据全天自动备份', desc2: '拒绝数据丢失' },
 			],
 		}
 	},
@@ -86,6 +101,12 @@ export default {
 <style lang="less" scoped>
 .el-container {
 	background: #F6FAFC;
+	& .line {
+		border: 4px solid #4E7EF9;
+		width: 60px;
+		margin: 20px auto 30px;
+		border-radius: 4px;
+	}
 	& .main {
 		border: 1px solid #ddd;
 		border-radius: 	4px;
@@ -94,23 +115,37 @@ export default {
 		background: #fff;
 		box-shadow: 0px 0px 10px #ddd;
 		& .title {
-		font-size: 16px;
+			font-size: 36px;
 			text-align: center;
-			padding: 10px 0px;
+			padding: 60px 0px 0px 0px;
+			font-family: "Microsoft YaHei";
+			color:#373839;
 		}
+		
 		& .box{
 			display: flex;
 			flex-flow: row wrap;
 			justify-content: space-around;
-			padding: 10px 0px;
+			padding:0px 60px 30px 60px;
 			& .boxChild {
-				width: 20%;
+				width: 265px;
 				text-align: center;
 				font-size: 12px;
+				height: 218px;
+				border: 1px solid #ddd;
+				box-shadow: 0px 0px 12px #dddee5;
+				border-radius: 8px;
+				position: relative;
 				& div {
-					border-radius: 50%;
-					& img {
-						width: 100%;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%,-50%);
+					& p {
+						margin-top:20px;
+						font-size: 18px;
+						color: #373839;
+						font-family: "Microsoft YaHei";
 					}
 				}
 			}
@@ -179,14 +214,20 @@ export default {
 		& .sevreBox{
 			display: flex;
 			flex-flow: row wrap;
+			margin: 90px 0px;
+			justify-content: space-between;
 			& div.outSide {
-				width: 25%;
+				width: 295px;
+				height:282px;
 				text-align: center;
 				box-sizing: border-box;
-				padding: 20px;
 				& p.pFirst {
 					padding: 10px 0px;
 					font-size: 16px;
+				}
+				& p.pSecond {
+					padding-top: 5px;
+					color:#373839;
 				}
 			}
 		}

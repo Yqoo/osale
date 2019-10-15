@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-10-09 16:12:51
  * @LastEditors: Yqoo
- * @LastEditTime: 2019-10-14 15:43:42
+ * @LastEditTime: 2019-10-15 15:05:47
  * @Desc: 
  -->
 <template>
@@ -70,6 +70,11 @@
           </el-col>
         </el-row>
      	</el-header>
+			<el-carousel :interval="5000" arrow="always" height="660px">
+				<el-carousel-item v-for="( banner,index) in banners" :key="index">
+					<img :src="banner" alt="" style="width:100%;height:100%;">
+				</el-carousel-item>
+			</el-carousel>
 		<component :is="current"></component>
 		<Footer></Footer>
     </el-container>
@@ -98,7 +103,12 @@ export default {
 				{ index: 'scheme', name: '解决方案', icon:'el-icon-document' },
 				{ index: 'down', name: '下载中心', icon:'el-icon-sold-out' },
 			],
-			current: 'Index'
+			current: 'Index',
+			banners: [
+				require('@/assets/image/index/banner-1.png'),
+				require('@/assets/image/index/banner-2.png'),
+				require('@/assets/image/index/banner-3.png'),
+			]
 		}
 	},
 	methods: {
@@ -126,8 +136,8 @@ export default {
 @color: #4E7EF9;
 @fontColor: #00b8a9;
 .home {
-  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB",
-    "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  font-family: "Microsoft YaHei","Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB",
+    "微软雅黑", Arial, sans-serif;
   & .el-container {
     & .el-header {
       background-color: @color;
@@ -147,7 +157,7 @@ export default {
 					}
 				}
 			}
-    }
+		}
   }
   & .phoneBtn {
     background: @color;
