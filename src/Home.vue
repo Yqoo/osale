@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-10-09 16:12:51
  * @LastEditors: Yqoo
- * @LastEditTime: 2019-10-15 15:05:47
+ * @LastEditTime: 2019-10-15 16:38:38
  * @Desc: 
  -->
 <template>
@@ -78,6 +78,7 @@
 		<component :is="current"></component>
 		<Footer></Footer>
     </el-container>
+		<el-backtop></el-backtop>
   </div>
 </template>
 
