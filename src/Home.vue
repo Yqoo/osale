@@ -70,11 +70,7 @@
           </el-col>
         </el-row>
      	</el-header>
-			<el-carousel :interval="5000" arrow="always" height="660px">
-				<el-carousel-item v-for="( banner,index) in banners" :key="index">
-					<img :src="banner" alt="" style="width:100%;height:100%;">
-				</el-carousel-item>
-			</el-carousel>
+			
 		<component :is="current"></component>
 		<Footer></Footer>
     </el-container>
@@ -105,11 +101,7 @@ export default {
 				{ index: 'down', name: '下载中心', icon:'el-icon-sold-out' },
 			],
 			current: 'Index',
-			banners: [
-				require('@/assets/image/index/banner-1.png'),
-				require('@/assets/image/index/banner-2.png'),
-				require('@/assets/image/index/banner-3.png'),
-			]
+		
 		}
 	},
 	methods: {

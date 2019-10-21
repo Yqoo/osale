@@ -1,12 +1,17 @@
 <!--
  * @Date: 2019-10-09 11:54:22
  * @LastEditors: Yqoo
- * @LastEditTime: 2019-10-18 15:48:17
+ * @LastEditTime: 2019-10-21 09:18:43
  * @Desc: 
  -->
 <template>
   <el-container>
     <el-main>
+			<el-carousel :interval="5000" arrow="always" height="660px">
+				<el-carousel-item v-for="( banner,index) in banners" :key="index">
+					<img :src="banner" alt="" style="width:100%;height:100%;">
+				</el-carousel-item>
+			</el-carousel>
       <div class="main animated slideInDown">
         <div class="title">灵析软件 专注服装行业 深耕每一个细节</div>
 				<div class="line"></div>
@@ -70,6 +75,11 @@ export default {
 	name: "index",
 	data(){
 		return {
+			banners: [
+				require('@/assets/image/index/banner-1.png'),
+				require('@/assets/image/index/banner-2.png'),
+				require('@/assets/image/index/banner-3.png'),
+			],
 			boxs: [
 				{ img: require('@/assets/image/index/fuzhunaglingshou.png'), name: '服装零售版', pane: 'resale' },
 				{ img: require('@/assets/image/index/wangluolians.png'), name: '服装连锁网络版', pane: 'chain' },

@@ -171,3 +171,6 @@ ol {
 .el-submenu .el-menu{
   z-index: 10000001;
 }
+.el-main {
+  padding: 0px;
+}

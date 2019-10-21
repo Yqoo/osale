@@ -1,11 +1,12 @@
 <!--
  * @Date: 2019-10-14 15:43:11
  * @LastEditors: Yqoo
- * @LastEditTime: 2019-10-18 17:32:15
+ * @LastEditTime: 2019-10-21 09:22:26
  * @Desc: 服装零售组件
  -->
 <template>
     <div class="resale">
+        <img :src="require('@/assets/image/resale/banner-1.png')" alt="" class="heartBeat animated">
         <div class="box flipInX animated">
             <div class="inSideBox">
                 <div class="desc">
