@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-10-09 16:12:51
  * @LastEditors: Yqoo
- * @LastEditTime: 2019-10-15 16:38:38
+ * @LastEditTime: 2019-10-21 09:34:58
  * @Desc: 
  -->
 <template>
@@ -70,7 +70,6 @@
           </el-col>
         </el-row>
      	</el-header>
-			
 		<component :is="current"></component>
 		<Footer></Footer>
     </el-container>
@@ -100,7 +99,7 @@ export default {
 				{ index: 'scheme', name: '解决方案', icon:'el-icon-document' },
 				{ index: 'down', name: '下载中心', icon:'el-icon-sold-out' },
 			],
-			current: 'Index',
+			current: 'Cloud',
 		
 		}
 	},

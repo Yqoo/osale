@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-10-14 15:43:11
  * @LastEditors: Yqoo
- * @LastEditTime: 2019-10-21 09:22:26
+ * @LastEditTime: 2019-10-21 09:30:28
  * @Desc: 服装零售组件
  -->
 <template>
@@ -124,6 +124,10 @@ export default {
     .resale {
         background: #F6FAFC;
         font-family: "Microsoft YaHei";
+        & img {
+            width: 100%;
+            height: 100%;
+        }
         & .box {
             display: flex;
             flex-flow: row wrap;
@@ -223,6 +227,7 @@ export default {
                     height: 386px;
                     & img{
                         padding: 40px;
+                        width: 70px;
                     }
                     & div {
                         text-align: center;
