@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-10-23 17:20:56
  * @LastEditors: Yqoo
- * @LastEditTime: 2019-10-24 17:28:59
+ * @LastEditTime: 2019-10-24 17:33:20
  * @Desc: 服装连锁网络版
  -->
 <template>
@@ -231,7 +231,7 @@ export default {
       const { top, left, bottom, right } = el.getBoundingClientRect();
       const { innerHeight, innerWidth } = window;
       return partiallyVisible
-        ? ((top > 0 && top < innerHeight + 100) || (bottom > 0 && bottom < innerHeight)) &&
+        ? ((top > 0 && top < innerHeight ) || (bottom > 0 && bottom < innerHeight)) &&
             ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth))
         : top >= 0 && left >= 0 && bottom <= innerHeight && right <= innerWidth;
     },
