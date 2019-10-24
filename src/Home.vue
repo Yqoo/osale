@@ -1,7 +1,7 @@
 <!--
  * @Date: 2019-10-09 16:12:51
  * @LastEditors: Yqoo
- * @LastEditTime: 2019-10-21 09:34:58
+ * @LastEditTime: 2019-10-23 17:24:50
  * @Desc: 
  -->
 <template>
@@ -92,6 +92,8 @@ export default {
 				{ index: 'index', name: '首页', icon:'el-icon-s-home' },
 				{ index: 'product', name: '产品介绍', icon:'el-icon-s-promotion', children:[
 					{ index: 'resale', name: '服装零售版', icon:'el-icon-shopping-cart-full' },
+					{ index: 'chain', name: '服装连锁网络版', icon:'el-icon-shopping-cart-1' },
+					{ index: 'distribution', name: '服装加盟分销版', icon:'el-icon-shopping-cart-2' },
 					{ index: 'cloud', name: '云服务', icon:'el-icon-partly-cloudy' },
 					{ index: 'app', name: '手机APP', icon:'el-icon-mobile-phone' },
 					{ index: 'wx', name: 'o2o微信会员', icon:'el-icon-user' },
@@ -99,7 +101,7 @@ export default {
 				{ index: 'scheme', name: '解决方案', icon:'el-icon-document' },
 				{ index: 'down', name: '下载中心', icon:'el-icon-sold-out' },
 			],
-			current: 'Cloud',
+			current: 'chain',
 		
 		}
 	},
