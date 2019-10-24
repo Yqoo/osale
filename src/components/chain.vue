@@ -1,14 +1,14 @@
 <!--
  * @Date: 2019-10-23 17:20:56
  * @LastEditors: Yqoo
- * @LastEditTime: 2019-10-24 15:40:05
+ * @LastEditTime: 2019-10-24 17:28:59
  * @Desc: 服装连锁网络版
  -->
 <template>
   <div class="chain">
     <img :src="require('@/assets/image/chain/banner-1.png')" alt="" class="heartBeat animated">
     <div class="main">
-      <div class="box_1 fadeInDown animated">
+      <div id="box_1" :class="{box_1:true, fadeInRight: box_1, animated: true}">
         <div class="outside">
           <div class="inside">
             <h3>互联网时代</h3>
@@ -25,7 +25,7 @@
           <img :src="require('@/assets/image/chain/hulianwang.png')" alt="">
         </div>
       </div>
-      <div class="box_2 fadeInLeft animated">
+      <div id="box_2" :class="{box_2:true, fadeInLeft:box_2, animated:true}">
         <h3>适用于中小型服装企业</h3>
         <div class="line"></div>
         <ul class="outside">
@@ -47,7 +47,7 @@
           </li>
         </ul>
       </div>
-      <div class="box_3 fadeInRight animated">
+      <div id="box_3" :class="{box_3:true, fadeInRight:box_3, animated: true}">
         <h3>主要特性、应用价值</h3>
         <div class="line"></div>
         <div class="outside">
@@ -75,7 +75,7 @@
           </ul>
         </div>
       </div>
-      <div class="box_4 rotateInDownLeft animated">
+      <div id="box_4" :class="{box_4:true, zoomIn:box_4, animated:true}">
         <h3>产品功能简介</h3>
         <div class="line"></div>
         <div class="outside">
@@ -94,7 +94,7 @@
           </div>
         </div> 
       </div>
-      <div class="box_4 rotateInDownRight animated">
+      <div id="box_6" :class="{box_4: true, tada: box_6, animated:true}">
         <div class="outside">
           <div class="right">
             <h2>店铺收银端</h2>
@@ -111,7 +111,7 @@
           </div>
         </div> 
       </div>
-      <div class="box_5 lightSpeedIn animated">
+      <div id="box_5" :class="{box_5: true, lightSpeedIn: box_5, animated: true}">
         <h3>店铺日常事务介绍</h3>
         <div class="line"></div> 
         <ul class="outside">
@@ -131,6 +131,7 @@
 </template>
 
 <script>
+import { closeSync } from 'fs';
 export default {
   name: 'chain',
   data(){
@@ -214,7 +215,35 @@ export default {
           '支持漏盘末盘、盘亏、盘盈实时查看'
         ] },
       ],
+      box_1: true,
+      box_2: true,
+      box_3: true,
+      box_4: true,
+      box_5: true,
+      box_6: true,
     }
+  },
+  created(){
+    window.addEventListener('scroll', this.scroll)
+  },
+  methods: {
+    elementIsVisibleInViewport (el , partiallyVisible = false){
+      const { top, left, bottom, right } = el.getBoundingClientRect();
+      const { innerHeight, innerWidth } = window;
+      return partiallyVisible
+        ? ((top > 0 && top < innerHeight + 100) || (bottom > 0 && bottom < innerHeight)) &&
+            ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth))
+        : top >= 0 && left >= 0 && bottom <= innerHeight && right <= innerWidth;
+    },
+    scroll(){
+      let arr = ['box_1','box_2','box_3','box_4','box_5','box_6'];
+      arr.forEach( item => {
+        let box = document.getElementById(item);
+        let res = this.elementIsVisibleInViewport(box,true);
+        res && (this[item] = true) || (this[item] = false);
+      })
+    },
+    
   },
 }
 </script>
